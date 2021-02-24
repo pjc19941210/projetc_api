@@ -1,5 +1,5 @@
 <?php
-
+use \think\facade\Env;
 return [
     // 默认使用的数据库连接配置
     'default'         => env('database.driver', 'mysql'),
@@ -19,21 +19,21 @@ return [
     'connections'     => [
         'mysql' => [
             // 数据库类型
-            'type'            => env('database.type', 'mysql'),
+            'type'            => env('database.type', Env::TYPE),
             // 服务器地址
-            'hostname'        => env('database.hostname', '127.0.0.1'),
+            'hostname'        => env('database.hostname', Env::HOSTNAME),
             // 数据库名
-            'database'        => env('database.database', ''),
+            'database'        => env('database.database', Env::DATABASE),
             // 用户名
-            'username'        => env('database.username', 'root'),
+            'username'        => env('database.username', Env::USERNAME),
             // 密码
-            'password'        => env('database.password', ''),
+            'password'        => env('database.password', Env::PASSWORD),
             // 端口
-            'hostport'        => env('database.hostport', '3306'),
+            'hostport'        => env('database.hostport', Env::HOSTPORT),
             // 数据库连接参数
             'params'          => [],
             // 数据库编码默认采用utf8
-            'charset'         => env('database.charset', 'utf8'),
+            'charset'         => env('database.charset', Env::CHARSET),
             // 数据库表前缀
             'prefix'          => env('database.prefix', ''),
 
